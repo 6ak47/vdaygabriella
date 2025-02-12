@@ -145,8 +145,72 @@
             <p>Here’s a special background track for you, my love! 💖</p>
 
             <!-- Embed the YouTube video with music autoplay, mute, and loop enabled -->
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/zrgH95-sqls?autoplay=1&mute=1&loop=1&playlist=zrgH95-sqls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EgfsXTOn_pI?si=AeulAkUlNnhc2sdN&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
+
+        <!-- Quiz Section -->
+        <section>
+            <div class="quiz-container">
+                <h2>OKAY LETS SEE.</h2>
+
+                <form id="quiz-form">
+                    <div class="question">
+                        <p>When did we meet?</p>
+                        <label><input type="radio" name="question1" value="A"> Start of 2022</label><br>
+                        <label><input type="radio" name="question1" value="B"> End of 2021</label><br>
+                        <label><input type="radio" name="question1" value="C"> End of 2022</label><br>
+                    </div>
+
+                    <div class="question">
+                        <p>What was the start of our first convo about?</p>
+                        <label><input type="radio" name="question2" value="A"> Music</label><br>
+                        <label><input type="radio" name="question2" value="B"> Shoes</label><br>
+                        <label><input type="radio" name="question2" value="C"> Life</label><br>
+                    </div>
+
+                    <div class="question">
+                        <p>What was I stressing you about aaaall the time?</p>
+                        <label><input type="radio" name="question3" value="A"> U going to sleep</label><br>
+                        <label><input type="radio" name="question3" value="B"> Going to Uni</label><br>
+                        <label><input type="radio" name="question3" value="C"> Shower cuz u stinky</label><br>
+                    </div>
+
+                    <button type="button" onclick="submitQuiz()">Submit</button>
+                </form>
+
+                <div id="result" class="result"></div>
+            </div>
+        </section>
+
     </main>
+
+    <script>
+        // quiz.js
+        function submitQuiz() {
+            const form = document.getElementById('quiz-form');
+            const resultDiv = document.getElementById('result');
+            const formData = new FormData(form);
+
+            // Count the number of correct answers
+            let score = 0;
+            if (formData.get('question1') === 'C') score++;
+            if (formData.get('question2') === 'B') score++;
+            if (formData.get('question3') === 'A') score++;
+
+            // Show the result based on the score
+            let resultMessage = '';
+            if (score === 3) {
+                resultMessage = 'Gawdamn goober u know everything 💖';
+            } else if (score === 2) {
+                resultMessage = 'Its okay goober u cant know everything 💕';
+            } else if (score === 1) {
+                resultMessage = 'grrrrrrrr ❤️';
+            } else {
+                resultMessage = 'ARE YOU FLIPPING SERIOUS????';
+            }
+            resultDiv.innerHTML = resultMessage;
+            resultDiv.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
