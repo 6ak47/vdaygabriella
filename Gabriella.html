@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Happy Valentines Day <3</title>
+    <style>
+      body {
+        background-color: grey;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      a {
+        color: lightblue;
+      }
+
+      h1, h2, h3 {
+        color: pink;
+      }
+
+      button {
+        background-color: pink;
+        color: black;
+        border: none;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: lightcoral;
+      }
+
+      .quiz-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        margin: 40px auto;
+        text-align: center;
+        border: 3px solid pink;
+        background: linear-gradient(to bottom right, #ff66b2, #ff99cc);
+      }
+
+      .question {
+        margin-bottom: 25px;
+      }
+
+      .question p {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      label {
+        color: #333;
+        display: block;
+        margin: 10px 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+      }
+
+      .result {
+        display: none;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #e91e63;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(255, 105, 180, 0.2);
+      }
+
+      input[type="radio"], label {
+        color: black;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="radio"]:checked {
+        background-color: #e91e63;
+        color: white;
+      }
+
+      button {
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      button:active {
+        background-color: darkorange;
+      }
+
+      /* Volume control and play button positioning at the top */
+      .top-controls {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .volume-control {
+        margin-top: 10px;
+        text-align: center;
+      }
+      
+      .volume-control input {
+        width: 80%;
+        margin-top: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Top Controls for Music and Volume -->
+    <section class="top-controls">
+      <audio id="background-music" loop>
+        <source src="C:\Users\Administrator\Downloads\Passionfruit.mp3" type="audio/mp3">
+        <source src="background-music.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <button onclick="playAudio()">Play Music</button>
+
+      <!-- Volume Control Slider -->
+      <div class="volume-control">
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" onchange="adjustVolume()">
+      </div>
+    </section>
+
+    <main>
+      <h1>Happy Valentine's my love <3</h1>
+      <section>
+        <p>You might ask yourself why you are the best Girlfriend in the World, well let me tell you here</p>
+        <img src="https://i.pinimg.com/736x/0a/d5/f1/0ad5f1c9dd4402cd3d35636f8c9f8eff.jpg" alt="A cute orange cat lying on its back.">
+      </section>
+
+      <section>
+        <h2>List of Qualities of my Soulmate</h2>
+        <ul>
+          <li>Unbelievably Kind</li>
+          <li>Incredible Loving</li>
+          <li>Unfathomable Gorgeous</li>
+          <li>Crazy Sweet</li>
+          <li>Super delightful Person to be around</li>
+          <li>Always puts me first like no one else does</li>
+          <li>Never lets me doubt her love because she always makes sure to show me</li>
+          <li>Has the Ability to make time go by in the blink of an Eye</li>
+        </ul>
+        <p>I could go on with another 100 Qualities and write down the list of every adjective the Internet spits out to me connected to a loving, beautiful, and kind person because the way you are to me and have been for the past years cannot be put into words.</p>
+      </section>
+
+      <section>
+        <div class="quiz-container">
+          <h2>OKAY LETS SEE.</h2>
+
+          <form id="quiz-form">
+            <div class="question">
+              <p>When did we meet?</p>
+              <label><input type="radio" name="question1" value="A"> Start of 2022</label><br>
+              <label><input type="radio" name="question1" value="B"> End of 2021</label><br>
+              <label><input type="radio" name="question1" value="C"> End of 2022</label><br>
+            </div>
+
+            <div class="question">
+              <p>What was the start of our first convo about?</p>
+              <label><input type="radio" name="question2" value="A"> Music</label><br>
+              <label><input type="radio" name="question2" value="B"> Shoes</label><br>
+              <label><input type="radio" name="question2" value="C"> Life</label><br>
+            </div>
+
+            <div class="question">
+              <p>What was I stressing you about aaaall the time?</p>
+              <label><input type="radio" name="question3" value="A"> U going to sleep</label><br>
+              <label><input type="radio" name="question3" value="B"> Going to Uni</label><br>
+              <label><input type="radio" name="question3" value="C"> Shower cuz u stinky</label><br>
+            </div>
+
+            <button type="button" onclick="submitQuiz()">Submit</button>
+          </form>
+
+          <div id="result" class="result"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      // Function to play audio
+      function playAudio() {
+        const audio = document.getElementById("background-music");
+        audio.play();
+      }
+
+      // Function to adjust volume
+      function adjustVolume() {
+        const audio = document.getElementById("background-music");
+        const volume = document.getElementById("volume").value;
+        audio.volume = volume;
+      }
+
+      // Quiz result logic
+      function submitQuiz() {
+        const form = document.getElementById('quiz-form');
+        const resultDiv = document.getElementById('result');
+        const formData = new FormData(form);
+
+        let score = 0;
+        if (formData.get('question1') === 'C') score++;
+        if (formData.get('question2') === 'B') score++;
+        if (formData.get('question3') === 'A') score++;
+
+        let resultMessage = '';
+        if (score === 3) {
+          resultMessage = 'Gawdamn goober u know everything 💖';
+        } else if (score === 2) {
+          resultMessage = 'Its okay goober u cant know everything 💕';
+        } else if (score === 1) {
+          resultMessage = 'grrrrrrrr ❤️';
+        } else {
+          resultMessage = 'ARE YOU FLIPPING SERIOUS????';
+        }
+        resultDiv.innerHTML = resultMessage;
+        resultDiv.style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
