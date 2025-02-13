@@ -4,277 +4,190 @@
     <meta charset="UTF-8">
     <title>Happy Valentine's Day <3</title>
     <style>
-body {
-    background-color: black; /* Grey background */
-    color: white; /* White text for better contrast */
-    font-family: Arial, sans-serif;
-}
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-a {
-    color: lightblue; /* Link color */
-}
+        h1, h2, h3 {
+            color: pink;
+        }
 
-h1, h2, h3 {
-    color: pink; /* Titles in pink for a nice aesthetic */
-}
+        button {
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
 
-button {
-    background-color: pink;
-    color: black;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
+        button:hover {
+            background-color: #ff6699;
+        }
 
-button:hover {
-    background-color: lightcoral;
-}
+        button:active {
+            background-color: #cc3366;
+        }
 
-.quiz-container {
-    background-color: #333333; /* Dark charcoal background */
-    padding: 20px; /* Reduced padding for compactness */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Dark shadow for a sleek look */
-    width: 350px; /* More compact width */
-    margin: 20px auto; /* Centered with less margin */
-    text-align: center;
-    border: 2px solid #666666; /* Subtle gray border */
-}
+        .quiz-container {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #666666;
+        }
 
-.question p {
-    font-weight: bold;
-    font-size: 16px; /* Slightly smaller font for compactness */
-    color: white; /* White text for readability */
-}
+        .question p {
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+        }
 
-label {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.15); /* Subtle transparent white background */
-    padding: 8px;
-    border-radius: 5px;
-    display: block;
-    margin: 8px 0;
-    transition: background-color 0.3s ease;
-}
+        label {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px;
+            border-radius: 5px;
+            display: block;
+            margin: 8px 0;
+            transition: background-color 0.3s ease;
+        }
 
-input[type="radio"]:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Hover effect to slightly brighten */
-}
+        input[type="radio"]:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
 
-input[type="radio"]:checked {
-    background-color: #5c5c5c; /* Medium gray when selected */
-    color: white;
-}
+        input[type="radio"]:checked {
+            background-color: #e91e63;
+            color: white;
+        }
 
-button {
-    background-color: #444444; /* Dark button color */
-    color: white;
-    border-radius: 5px;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
 
-button:hover {
-    background-color: #666666; /* Hover effect for button */
-}
+        .slideshow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-.result {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter background for results */
-    color: white;
-}
+        .slideshow img {
+            width: 80%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-/* Ensure that form elements have good contrast */
-input[type="radio"], label {
-    color: black;
-    background-color: #f9f9f9; /* Light background for the options */
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    transition: background-color 0.3s ease;
-}
+        @media (max-width: 600px) {
+            .quiz-container {
+                width: 90%;
+            }
 
-input[type="radio"]:checked {
-    background-color: #e91e63; /* Highlight selected option in pink */
-    color: white; /* Make text white when selected */
-}
+            .question p, label {
+                font-size: 14px;
+            }
 
-input[type="radio"]:hover {
-    background-color: #f2f2f2;
-}
+            .slideshow img {
+                width: 90%;
+            }
+        }
 
-button {
-    background-color: #ff3366; /* Bright pinkish-red */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
+        .floating-hearts {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
 
-button:hover {
-    background-color: #ff6699; /* Light pink hover */
-}
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff69b4;
+            transform: rotate(45deg);
+            animation: float 5s ease-in-out infinite;
+            opacity: 0.8;
+        }
 
-button:active {
-    background-color: #cc3366; /* Darker pink when clicked */
-}
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff69b4;
+            border-radius: 50%;
+        }
 
-.slideshow {
-    display: flex;
-    justify-content: center; /* Center images */
-    align-items: center;
-    margin-top: 20px;
-}
+        .heart::before {
+            left: 0;
+            top: -15px;
+        }
 
-.slideshow img {
-    width: 80%;  /* Adjust width to fit well on mobile */
-    max-width: 300px; /* Prevents images from getting too big */
-    height: auto;
-    border-radius: 10px; /* Slightly rounded corners for a smoother look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for aesthetics */
-}
+        .heart::after {
+            left: 15px;
+            top: -15px;
+        }
 
-/* Ensure good responsiveness for mobile screens */
-@media (max-width: 600px) {
-    .quiz-container {
-        width: 90%; /* Allow quiz container to be wider on mobile */
-    }
+        .memory-game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-    .question p, label {
-        font-size: 14px; /* Slightly smaller text for mobile */
-    }
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 10px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px;
+        }
 
-    .slideshow img {
-        width: 90%; /* Slideshow images will adjust to mobile view */
-    }
-}
+        .card {
+            width: 80px;
+            height: 80px;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-.secret-button {
-    background-color: red; 
-    color: white; 
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
-}
+        .card.flipped {
+            background-color: lightcoral;
+            color: white;
+        }
 
-.secret-button:hover {
-    background-color: darkred;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-}
-
-.secret-button:active {
-    transform: scale(0.95);
-}
-
-/* Hidden Message */
-#hiddenMessage {
-    display: none;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    background: linear-gradient(45deg, #ff66b2, #ffcc00, #ff6666, #66ccff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fadeIn 1s ease-in-out;
-    margin-top: 20px;
-}
-
-/* Smooth fade-in effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* Container for floating hearts */
-.floating-hearts {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  overflow: hidden;
-}
-
-/* Heart shape using CSS */
-.heart {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: #ff69b4; /* Pink heart color */
-  transform: rotate(45deg);
-  animation: float 5s ease-in-out infinite;
-  opacity: 0.8;
-}
-
-.heart::before,
-.heart::after {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: #ff69b4; /* Same color as the main heart */
-  border-radius: 50%;
-}
-
-.heart::before {
-  left: 0;
-  top: -15px;
-}
-
-.heart::after {
-  left: 15px;
-  top: -15px;
-}
-
-/* Animation for floating upwards */
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(45deg);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-100vh) rotate(45deg);
-    opacity: 0;
-  }
-}
     </style>
 </head>
 <body>
     <main>
-        <!-- YouTube Player section -->
         <section>
             <iframe width="100%" height="500" src="https://www.youtube.com/embed/EgfsXTOn_pI?si=AeulAkUlNnhc2sdN&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
@@ -299,36 +212,47 @@ button:active {
                 <li>Always puts me first like no one else does</li>
                 <li>Never lets me doubt her love because she always makes sure to show me</li>
                 <li>Has the Ability to make time go by in the blink of an Eye</li>
-                <li>Whenever I feel uneasy I just talk to you and I know im safe</li>
+                <li>Whenever I feel uneasy I just talk to you and I know I'm safe</li>
                 <li>We share the same humour and I love her lil spicy side</li>
                 <li>Always Supports me through hard times</li>
                 <li>Has the most beautiful and soft voice I could imagine someone have!!</li>
-                <li>She is so incredibly smart and such a grinder I couldnt be more proud of her</li>
+                <li>She is so incredibly smart and such a grinder I couldn't be more proud of her</li>
                 <li>Best Nurse in Australia!!</li>
                 <li>Always helps me cooking!!</li>
-                <li>Best Cook in Australia(i just know)</li>
+                <li>Best Cook in Australia (I just know)</li>
+                <li>You sleep like the cutest chicken in the world</li>
+                <li>You snore like the cutest chicken in the world too ;3</li>
+                <li>You have the best eepy voice in the whole universe</li>
+                <li>I love it when you are gassed and I love when you are happy it truly makes me sooooo happy too</li>
+
             </ul>
             <p>I could go on with another 100 Qualities and write down the list of every adjective the Internet spits out to me connected to a loving, beautiful, and kind person because the way you are to me and have been for the past years cannot be put into words.</p>
         </section>
+        
         <div class="slideshow">
             <img src="https://i.pinimg.com/736x/f4/94/57/f494577dec7be807db2aa869d027ab7d.jpg">
             <img src="https://i.pinimg.com/736x/5b/30/4c/5b304c364d08c98fb2849f16fb1d669e.jpg">
             <img src="https://i.pinimg.com/736x/eb/01/b9/eb01b99a2312d67bfe80becd76d1c61b.jpg">
-          </div>
-          <script>
+            <img src="https://i.pinimg.com/236x/8d/f3/16/8df31696a40058b2de5106a08020ccb4.jpg">
+            <img src="https://i.pinimg.com/236x/9b/88/be/9b88be69c0d970ee5c7d6d0a5e108cd2.jpg">
+            <img src="https://i.pinimg.com/474x/bf/ce/dd/bfcedd56720e609e6c8a9fe47b464a80.jpg">
+            <img src="https://i.pinimg.com/236x/1b/21/ba/1b21badf939b225937a4a046890f5136.jpg">
+        </div>
+        <script>
             let slideIndex = 0;
             function showSlides() {
-              let slides = document.querySelectorAll(".slideshow img");
-              slides.forEach((slide) => (slide.style.display = "none"));
-              slides[slideIndex].style.display = "block";
-              slideIndex = (slideIndex + 1) % slides.length;
-              setTimeout(showSlides, 3000);
+                let slides = document.querySelectorAll(".slideshow img");
+                slides.forEach((slide) => (slide.style.display = "none"));
+                slides[slideIndex].style.display = "block";
+                slideIndex = (slideIndex + 1) % slides.length;
+                setTimeout(showSlides, 3000);
             }
             showSlides();
-            </script>
+        </script>
+        
         <section>
             <div class="quiz-container">
-                <h2>OKAY LETS SEE.</h2>
+                <h2>OKAY LET'S SEE.</h2>
 
                 <form id="quiz-form">
                     <div class="question">
@@ -359,55 +283,94 @@ button:active {
             </div>
         </section>
 
+        <script>
+            // quiz.js
+            function submitQuiz() {
+                const form = document.getElementById('quiz-form');
+                const resultDiv = document.getElementById('result');
+                const formData = new FormData(form);
+
+                let score = 0;
+                if (formData.get('question1') === 'C') score++;
+                if (formData.get('question2') === 'B') score++;
+                if (formData.get('question3') === 'A') score++;
+
+                let resultMessage = '';
+                if (score === 3) {
+                    resultMessage = 'Gawdamn goober u know everything 💖';
+                } else if (score === 2) {
+                    resultMessage = 'Its okay goober u cant know everything 💕';
+                } else if (score === 1) {
+                    resultMessage = 'grrrrrrrr ❤️';
+                } else {
+                    resultMessage = 'ARE YOU FLIPPING SERIOUS????';
+                }
+
+                resultDiv.innerHTML = resultMessage;
+                resultDiv.style.display = 'block';
+            }
+        </script>
+
+        <p>I, <input type="text" id="gfName" placeholder="Your Name">, agree to be Luca's goober mc schnoober forever. ❤️</p>
+        <button onclick="signContract()">Sign this gabriella camawn !!!!</button>
+        <p id="contract-result"></p>
+
+        <script>
+            function signContract() {
+                let name = document.getElementById("gfName").value;
+                if (name) {
+                    document.getElementById("contract-result").innerHTML = `Signed with love by ${name} ❤️`;
+                } else {
+                    document.getElementById("contract-result").innerHTML = "Please enter your name!";
+                }
+            }
+        </script>
+
+        <section>
+            <h2>find the memory cards</h2>
+            <div class="memory-game">
+                <div class="memory-grid">
+                    <div class="card" data-emoji="goober🌟"></div>
+                    <div class="card" data-emoji="bub🌙"></div>
+                    <div class="card" data-emoji="goober🌟"></div>
+                    <div class="card" data-emoji="bub🌙"></div>
+                    <div class="card" data-emoji="baby❤️"></div>
+                    <div class="card" data-emoji="hayati🍀"></div>
+                    <div class="card" data-emoji="baby❤️"></div>
+                    <div class="card" data-emoji="hayati🍀"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script>
-        // quiz.js
-        function submitQuiz() {
-            const form = document.getElementById('quiz-form');
-            const resultDiv = document.getElementById('result');
-            const formData = new FormData(form);
+        let flippedCards = [];
 
-            // Count the number of correct answers
-            let score = 0;
-            if (formData.get('question1') === 'C') score++;
-            if (formData.get('question2') === 'B') score++;
-            if (formData.get('question3') === 'A') score++;
+        const cards = document.querySelectorAll(".memory-grid .card");
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                if (flippedCards.length === 2) return; // Prevent more than two cards being flipped
 
-            // Show the result based on the score
-            let resultMessage = '';
-            if (score === 3) {
-                resultMessage = 'Gawdamn goober u know everything 💖';
-            } else if (score === 2) {
-                resultMessage = 'Its okay goober u cant know everything 💕';
-            } else if (score === 1) {
-                resultMessage = 'grrrrrrrr ❤️';
-            } else {
-                resultMessage = 'ARE YOU FLIPPING SERIOUS????';
-            }
-            resultDiv.innerHTML = resultMessage;
-            resultDiv.style.display = 'block';
-        }
+                card.classList.add("flipped");
+                card.innerText = card.dataset.emoji;
+
+                flippedCards.push(card);
+
+                if (flippedCards.length === 2) {
+                    setTimeout(() => {
+                        if (flippedCards[0].dataset.emoji === flippedCards[1].dataset.emoji) {
+                            flippedCards = [];
+                        } else {
+                            flippedCards.forEach(card => {
+                                card.classList.remove("flipped");
+                                card.innerText = "";
+                            });
+                            flippedCards = [];
+                        }
+                    }, 1000);
+                }
+            });
+        });
     </script>
-    <p>I, <input type="text" id="gfName" placeholder="Your Name">, agree to be Luca's goober mc schnoober forever. ❤️</p>
-    <button onclick="signContract()">Sign this gabriella camawn !!!!</button>
-    <p id="contract-result"></p>
-    <script>
-      function signContract() {
-        let name = document.getElementById("gfName").value;
-        if (name) {
-          document.getElementById("contract-result").innerHTML = `Signed with love by ${name} ❤️`;
-        } else {
-          document.getElementById("contract-result").innerHTML = "Please enter your name!";
-        }
-      }
-    </script>
-    <button class="secret-button" onclick="document.getElementById('hiddenMessage').style.display='block'">;]</button>
-    <p id="hiddenMessage" style="display: none;">This is your official "Get cock from Luca" coupon: AHJE8-KTNGA-8JA41 | You know where to redeem.</p>
-    <div class="floating-hearts">
-
-    </div>
-      <script>
-</script>
 </body>
 </html>
