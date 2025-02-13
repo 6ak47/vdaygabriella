@@ -103,7 +103,7 @@
             background-color: #f2f2f2;
         }
 
-        /* Button width */
+       
         button {
             width: 100%;
             font-size: 18px;
@@ -119,7 +119,7 @@
 </head>
 <body>
     <main>
-        <!-- YouTube Player section -->
+       
         <section>
             <iframe width="100%" height="500" src="https://www.youtube.com/embed/EgfsXTOn_pI?si=AeulAkUlNnhc2sdN&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
@@ -145,7 +145,7 @@
             <p>I could go on with another 100 Qualities and write down the list of every adjective the Internet spits out to me connected to a loving, beautiful, and kind person because the way you are to me and have been for the past years cannot be put into words.</p>
         </section>
         
-        <!-- Quiz Section -->
+       
         <section>
             <div class="quiz-container">
                 <h2>OKAY LETS SEE.</h2>
@@ -182,19 +182,19 @@
     </main>
 
     <script>
-        // quiz.js
+        
         function submitQuiz() {
             const form = document.getElementById('quiz-form');
             const resultDiv = document.getElementById('result');
             const formData = new FormData(form);
 
-            // Count the number of correct answers
+            
             let score = 0;
             if (formData.get('question1') === 'C') score++;
             if (formData.get('question2') === 'B') score++;
             if (formData.get('question3') === 'A') score++;
 
-            // Show the result based on the score
+            
             let resultMessage = '';
             if (score === 3) {
                 resultMessage = 'Gawdamn goober u know everything 💖';
@@ -209,5 +209,18 @@
             resultDiv.style.display = 'block';
         }
     </script>
+<p>I, <input type="text" id="gfName" placeholder="Your Name">, agree to be the cutest, most loving girlfriend forever. ❤️</p>
+<button onclick="signContract()">Sign the Love Contract 💞</button>
+<p id="contract-result"></p>
+<script>
+  function signContract() {
+    let name = document.getElementById("gfName").value;
+    if (name) {
+      document.getElementById("contract-result").innerHTML = `Signed with love by ${name} ❤️`;
+    } else {
+      document.getElementById("contract-result").innerHTML = "Please enter your name!";
+    }
+  }
+</script>
 </body>
 </html>
