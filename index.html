@@ -108,48 +108,6 @@
                 width: 90%;
             }
         }
-
-        .floating-hearts {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden;
-        }
-
-        .heart {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: #ff69b4;
-            transform: rotate(45deg);
-            animation: float 5s ease-in-out infinite;
-            opacity: 0.8;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: #ff69b4;
-            border-radius: 50%;
-        }
-
-        .heart::before {
-            left: 0;
-            top: -15px;
-        }
-
-        .heart::after {
-            left: 15px;
-            top: -15px;
-        }
-
         .memory-game {
             display: flex;
             flex-direction: column;
@@ -183,15 +141,60 @@
             background-color: lightcoral;
             color: white;
         }
+        .secret-button {
+    background-color: red; 
+    color: white; 
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.secret-button:hover {
+    background-color: darkred;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+.secret-button:active {
+    transform: scale(0.95);
+}
+
+/* Hidden Message */
+#hiddenMessage {
+    display: none;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff66b2, #ffcc00, #ff6666, #66ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 20px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
     </style>
 </head>
 <body>
     <main>
-        <section>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/EgfsXTOn_pI?si=AeulAkUlNnhc2sdN&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </section>
-
         <h1>Happy Valentine's my love <3</h1>
         <section>
             <p>You might ask yourself why you are the best Girlfriend in the World, well let me tell you here</p>
@@ -311,7 +314,7 @@
             }
         </script>
 
-        <p>I, <input type="text" id="gfName" placeholder="Your Name">, agree to be Luca's goober mc schnoober forever. ❤️</p>
+        <p>I, <input type="text" id="gfName" placeholder="Your Name">, agree to be Luca's baby forever. ❤️</p>
         <button onclick="signContract()">Sign this gabriella camawn !!!!</button>
         <p id="contract-result"></p>
 
@@ -327,7 +330,7 @@
         </script>
 
         <section>
-            <h2>find the memory cards</h2>
+            <h2>memory with our phrases!</h2>
             <div class="memory-game">
                 <div class="memory-grid">
                     <div class="card" data-emoji="goober🌟"></div>
@@ -372,5 +375,7 @@
             });
         });
     </script>
+            <button class="secret-button" onclick="document.getElementById('hiddenMessage').style.display='block'">;]</button>
+            <p id="hiddenMessage" style="display: none;">This is your official "Get cock from Luca" coupon: AHJE8-KTNGA-8JA41 | You know where to redeem.</p>
 </body>
 </html>
